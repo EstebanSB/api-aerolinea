@@ -2,7 +2,7 @@
 Documentación para comprender y utilizar la API:
 
 # Descripción del proyecto
-Este proyecto utiliza Express.js para crear una API RESTful que se conecta a una base de datos MySQL para 
+Este proyecto utiliza Node Js Y Express.js para crear una API RESTful que se conecta a una base de datos MySQL para 
 obtener información sobre vuelos y pasajeros de una aerolínea. Se utiliza un enfoque de conexión de pool para 
 mejorar el rendimiento y la capacidad de manejar múltiples solicitudes de manera recurrente.
 
@@ -18,3 +18,6 @@ API, y MySQL para la conexión y las consultas a la base de datos.
 # Ejemplo de uso de la API
 Puedes utilizar herramientas como Postman para realizar solicitudes a la API y verificar las respuestas. Asegúrate 
 de proporcionar el ID correcto del vuelo en la ruta correspondiente para obtener los pasajeros.
+
+El proyecto fue subido a la pagina Glitch.com
+Link de la api con el endpoint aplicaco: https://ablaze-rainbow-lipstick.glitch.me/flights/1/passengers
