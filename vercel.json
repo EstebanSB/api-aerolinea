@@ -1,14 +1,15 @@
 {
-  "functions": {
-    "runtime": {
-      "nodejs": 14
-    }
-  },
   "version": 2,
   "builds": [
-    { "src": "index.js", "use": "@vercel/node" }
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/flights/:id/passengers", "dest": "index.js" }
+    {
+      "src": "/flights/:id/passengers",
+      "dest": "index.js"
+    }
   ]
 }
