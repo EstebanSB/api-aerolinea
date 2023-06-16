@@ -19,7 +19,7 @@ API, y MySQL para la conexión y las consultas a la base de datos.
 Puedes utilizar herramientas como Postman para realizar solicitudes a la API y verificar las respuestas. Asegúrate 
 de proporcionar el ID correcto del vuelo en la ruta correspondiente para obtener los pasajeros.
 
-El proyecto fue subido a la pagina Glitch.com
+El proyecto fue subido a la pagina Glitch.com <br/>
 link del proyecto: https://ablaze-rainbow-lipstick.glitch.me
 la pagina muestra mensaje de error ya que no tiene frontend desarrollado.
 
