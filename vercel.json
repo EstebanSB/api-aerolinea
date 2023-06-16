@@ -1,0 +1,13 @@
+{
+    "functions": {
+      "api": {
+        "runtime": "vercel-node@1",
+        "memory": 128
+      }
+    },
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/(.*)", "dest": "/index.js" }
+    ]
+  }
+  
