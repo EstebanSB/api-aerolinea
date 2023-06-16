@@ -1,5 +1,5 @@
 # Api ejercicio Bsale
-Documentación para comprender y utilizar la API:
+Documentación para comprender y utilizar la API.
 
 # Descripción del proyecto
 Este proyecto utiliza Node Js Y Express.js para crear una API RESTful que se conecta a una base de datos MySQL para 
