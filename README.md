@@ -24,5 +24,5 @@ link del proyecto: https://ablaze-rainbow-lipstick.glitch.me <br/>
 la pagina muestra mensaje de error ya que no tiene frontend desarrollado.
 
 
-Link de la api con el endpoint aplicado, se puede probar en postman o abrirlo directamente en el navegador.
+Link de la api con el endpoint aplicado, se puede testear en postman o abrirlo directamente en el navegador.
 https://ablaze-rainbow-lipstick.glitch.me/flights/1/passengers
