@@ -4,6 +4,8 @@ const mysql = require('mysql');
 const app = express();
 
 // Conexion a la BD
+//En lugar de utilizar createConnection, se utilizo createPool para gestionar un pool de conexiones. 
+//esto mejora el rendimiento y la capacidad de manejar multiples solicitudes de manera recurrente.
 const pool = mysql.createPool({
   connectionLimit: 10,
   host: 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',
@@ -12,6 +14,7 @@ const pool = mysql.createPool({
   database: 'airline',
 });
 
+// Funcion que ejecuta consultas en la bd, utilizando el pool de conexiones
 function executeQuery(query, params) {
   return new Promise((resolve, reject) => {
     pool.query(query, params, (error, results, fields) => {
@@ -24,6 +27,7 @@ function executeQuery(query, params) {
   });
 }
 
+// Funcion para obtener los pasajeros de un vuelo
 async function getPassengers(flightId) {
   const query = `
     SELECT * FROM flight
@@ -31,6 +35,7 @@ async function getPassengers(flightId) {
     INNER JOIN passenger ON boarding_pass.passenger_id = passenger.passenger_id
     WHERE flight.flight_id = ?
   `;
+  // Manejo de errores por si los datos no los trae correctamente
   try {
     const results = await executeQuery(query, flightId);
     return results;
@@ -43,18 +48,22 @@ app.get('/flights/:id/passengers', async (req, res) => {
   try {
     const flightId = req.params.id;
 
+    // Valida el campo flightId
     if (!flightId) {
       res.status(400).json({ code: 400, errors: 'Invalid flightId' });
       return;
     }
 
+    // Obtiene los pasajeros del vuelo
     const results = await getPassengers(flightId);
 
+    // Verifica si no se encuentras los resultados
     if (results.length === 0) {
       res.status(404).json({ code: 404, data: {} });
       return;
     }
 
+    // Mapea los resultados a un arreglo de objetos de pasajeros
     const passengers = results.map((row) => ({
       passengerId: row.passenger_id,
       dni: row.dni,
@@ -67,6 +76,7 @@ app.get('/flights/:id/passengers', async (req, res) => {
       seatId: row.seat_id
     }));
 
+    // Crea el objeto flightData con la informacion del vuelo y los pasajeros
     const flightData = {
       flightId: results[0].flight_id,
       takeoffDateTime: results[0].takeoff_date_time,
@@ -77,6 +87,7 @@ app.get('/flights/:id/passengers', async (req, res) => {
       passengers: passengers
     };
 
+    // Envia la respuesta con codigo 200 junto con los datos del vuelo y los pasajeros
     res.status(200).json({ code: 200, data: flightData });
   } catch (error) {
     console.error('Error al procesar la solicitud:', error);
@@ -84,4 +95,8 @@ app.get('/flights/:id/passengers', async (req, res) => {
   }
 });
 
-module.exports = app;
+// Muestra por consola que el servidor se ha iniciado correctamente en el puerto 3000
+app.listen(3000, () => {
+  console.log('Servidor iniciado en el puerto 3000');
+});
+
