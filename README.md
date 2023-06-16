@@ -20,7 +20,7 @@ Puedes utilizar herramientas como Postman para realizar solicitudes a la API y v
 de proporcionar el ID correcto del vuelo en la ruta correspondiente para obtener los pasajeros.
 
 El proyecto fue subido a la pagina Glitch.com <br/>
-link del proyecto: https://ablaze-rainbow-lipstick.glitch.me
+link del proyecto: https://ablaze-rainbow-lipstick.glitch.me <br/>
 la pagina muestra mensaje de error ya que no tiene frontend desarrollado.
 
 
