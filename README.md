@@ -20,4 +20,4 @@ Puedes utilizar herramientas como Postman para realizar solicitudes a la API y v
 de proporcionar el ID correcto del vuelo en la ruta correspondiente para obtener los pasajeros.
 
 El proyecto fue subido a la pagina Glitch.com
-Link de la api con el endpoint aplicaco: https://ablaze-rainbow-lipstick.glitch.me/flights/1/passengers
+Link de la api con el endpoint aplicado: https://ablaze-rainbow-lipstick.glitch.me/flights/1/passengers
