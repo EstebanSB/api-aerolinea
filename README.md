@@ -1,4 +1,4 @@
-# Api ejercicio Bsale
+# Api ejercicio
 Documentación para comprender y utilizar la API.
 
 # Descripción del proyecto
